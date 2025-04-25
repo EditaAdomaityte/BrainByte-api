@@ -1,0 +1,52 @@
+[
+    {
+      "model": "apiapi.quizattempt",
+      "pk": 1,
+      "fields": {
+        "user": 1,
+        "category": 3,
+        "question_count": 10,
+        "created_date": "2025-04-20"
+      }
+    },
+    {
+      "model": "apiapi.quizattempt",
+      "pk": 2,
+      "fields": {
+        "user": 2,
+        "category": 1,
+        "question_count": 5,
+        "created_date": "2025-04-21"
+      }
+    },
+    {
+      "model": "apiapi.quizattempt",
+      "pk": 3,
+      "fields": {
+        "user": 3,
+        "category": 2,
+        "question_count": 15,
+        "created_date": "2025-04-22"
+      }
+    },
+    {
+      "model": "apiapi.quizattempt",
+      "pk": 4,
+      "fields": {
+        "user": 4,
+        "category": 4,
+        "question_count": 7,
+        "created_date": "2025-04-23"
+      }
+    },
+    {
+      "model": "apiapi.quizattempt",
+      "pk": 5,
+      "fields": {
+        "user": 5,
+        "category": 5,
+        "question_count": 12,
+        "created_date": "2025-04-24"
+      }
+    }
+  ]

@@ -1,0 +1,902 @@
+[
+    {
+        "model": "apiapi.question",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "body": "JavaScript is a statically typed language.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 2,
+        "fields": {
+            "user": 2,
+            "body": "Python uses indentation for code blocks.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 3,
+        "fields": {
+            "user": 3,
+            "body": "Django is a Python web framework.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 4,
+        "fields": {
+            "user": 4,
+            "body": "SQL is a programming language.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 5,
+        "fields": {
+            "user": 5,
+            "body": "React is primarily used for back-end development.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 6,
+        "fields": {
+            "user": 1,
+            "body": "The JavaScript 'let' keyword allows block-scoped variable declarations.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 7,
+        "fields": {
+            "user": 2,
+            "body": "Python supports multiple inheritance.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 8,
+        "fields": {
+            "user": 3,
+            "body": "Django's primary database is MongoDB.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 9,
+        "fields": {
+            "user": 4,
+            "body": "In SQL, JOIN is used to combine data from multiple tables.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 10,
+        "fields": {
+            "user": 5,
+            "body": "React components must always include a render() method.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 11,
+        "fields": {
+            "user": 1,
+            "body": "JavaScript and Java are closely related languages.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 12,
+        "fields": {
+            "user": 2,
+            "body": "Python lists are immutable data structures.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 13,
+        "fields": {
+            "user": 3,
+            "body": "Django includes a built-in admin interface.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 14,
+        "fields": {
+            "user": 4,
+            "body": "SQL stands for Structured Query Language.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 15,
+        "fields": {
+            "user": 5,
+            "body": "React was developed by Google.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 16,
+        "fields": {
+            "user": 1,
+            "body": "Arrow functions in JavaScript provide their own 'this' binding.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 17,
+        "fields": {
+            "user": 2,
+            "body": "Python is an interpreted language.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 18,
+        "fields": {
+            "user": 3,
+            "body": "Django ORM supports both SQL and NoSQL databases equally well.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 19,
+        "fields": {
+            "user": 4,
+            "body": "SQL supports recursion through Common Table Expressions.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 20,
+        "fields": {
+            "user": 5,
+            "body": "The Virtual DOM is a core feature of React.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 21,
+        "fields": {
+            "user": 1,
+            "body": "JavaScript is single-threaded.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 22,
+        "fields": {
+            "user": 2,
+            "body": "In Python, everything is an object.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 23,
+        "fields": {
+            "user": 3,
+            "body": "Django templates support inheritance.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 24,
+        "fields": {
+            "user": 4,
+            "body": "NoSQL databases always follow the ACID principles.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 25,
+        "fields": {
+            "user": 5,
+            "body": "JSX is required to use React.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 26,
+        "fields": {
+            "user": 1,
+            "body": "JavaScript hoisting applies to function declarations but not variable declarations.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 27,
+        "fields": {
+            "user": 2,
+            "body": "Python's Global Interpreter Lock (GIL) allows multiple threads to execute Python bytecode simultaneously.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 28,
+        "fields": {
+            "user": 3,
+            "body": "Django migrations are used to version control database schema changes.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 29,
+        "fields": {
+            "user": 4,
+            "body": "SQL's GROUP BY clause is used for filtering records.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 30,
+        "fields": {
+            "user": 5,
+            "body": "React Hooks can only be called at the top level of a component.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 31,
+        "fields": {
+            "user": 1,
+            "body": "JavaScript's parseInt() function always returns an integer.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 32,
+        "fields": {
+            "user": 2,
+            "body": "Python's list comprehensions are generally slower than traditional for loops.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 33,
+        "fields": {
+            "user": 3,
+            "body": "Django REST framework is built into Django core.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 34,
+        "fields": {
+            "user": 4,
+            "body": "SQL has built-in support for regular expressions.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 35,
+        "fields": {
+            "user": 5,
+            "body": "React components always need to extend React.Component.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 36,
+        "fields": {
+            "user": 1,
+            "body": "In JavaScript, NaN === NaN evaluates to true.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 37,
+        "fields": {
+            "user": 2,
+            "body": "Python's 'is' operator compares the values of objects.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 38,
+        "fields": {
+            "user": 3,
+            "body": "Django form validation happens on the client side by default.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 39,
+        "fields": {
+            "user": 4,
+            "body": "The SQL WHERE clause is executed before GROUP BY.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 40,
+        "fields": {
+            "user": 5,
+            "body": "React's useEffect hook replaces both componentDidMount and componentDidUpdate.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 41,
+        "fields": {
+            "user": 1,
+            "body": "JavaScript promises can be awaited outside of an async function.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 42,
+        "fields": {
+            "user": 2,
+            "body": "Python's range() function generates a list of numbers.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 43,
+        "fields": {
+            "user": 3,
+            "body": "Django automatically sanitizes user input to prevent XSS attacks.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 44,
+        "fields": {
+            "user": 4,
+            "body": "In SQL, a foreign key can reference any column in another table.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 45,
+        "fields": {
+            "user": 5,
+            "body": "React context provides a way to pass data through the component tree without passing props manually.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 46,
+        "fields": {
+            "user": 1,
+            "body": "JavaScript variables declared with 'var' are function-scoped.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 47,
+        "fields": {
+            "user": 2,
+            "body": "Python decorators modify the behavior of functions or methods.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 48,
+        "fields": {
+            "user": 3,
+            "body": "Django's default database is PostgreSQL.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 49,
+        "fields": {
+            "user": 4,
+            "body": "SQL allows multiple primary keys in a single table.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 50,
+        "fields": {
+            "user": 5,
+            "body": "React components can return only a single child element.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 51,
+        "fields": {
+            "user": 1,
+            "body": "JavaScript objects are passed by reference.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 52,
+        "fields": {
+            "user": 2,
+            "body": "Python's garbage collection uses reference counting.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 53,
+        "fields": {
+            "user": 3,
+            "body": "Django middleware processes requests in the order they are defined.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 54,
+        "fields": {
+            "user": 4,
+            "body": "SQL views are physical copies of the data they represent.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 55,
+        "fields": {
+            "user": 5,
+            "body": "React's setState method is asynchronous.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 56,
+        "fields": {
+            "user": 1,
+            "body": "JavaScript was created by Brendan Eich in 10 days.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 57,
+        "fields": {
+            "user": 2,
+            "body": "Python supports multiple constructors in a class.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 58,
+        "fields": {
+            "user": 3,
+            "body": "Django includes built-in protection against CSRF attacks.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 59,
+        "fields": {
+            "user": 4,
+            "body": "SQL's HAVING clause can be used without GROUP BY.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 60,
+        "fields": {
+            "user": 5,
+            "body": "React's createElement function is required to create React elements.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 61,
+        "fields": {
+            "user": 1,
+            "body": "In JavaScript, '1' + 2 + 3 equals '123'.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 62,
+        "fields": {
+            "user": 2,
+            "body": "Python generators use the 'generate' keyword.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 63,
+        "fields": {
+            "user": 3,
+            "body": "Django templates are a form of server-side rendering.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 64,
+        "fields": {
+            "user": 4,
+            "body": "SQL's UPDATE statement can modify multiple tables at once in all SQL databases.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 65,
+        "fields": {
+            "user": 5,
+            "body": "React components must be declared as ES6 classes.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 66,
+        "fields": {
+            "user": 1,
+            "body": "JavaScript's typeof null returns 'object'.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 67,
+        "fields": {
+            "user": 2,
+            "body": "Python's asyncio library is used for parallel processing.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 68,
+        "fields": {
+            "user": 3,
+            "body": "Django's class-based views are more flexible than function-based views.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 69,
+        "fields": {
+            "user": 4,
+            "body": "SQL indexes always speed up data retrieval.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 70,
+        "fields": {
+            "user": 5,
+            "body": "React's props are immutable.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 71,
+        "fields": {
+            "user": 1,
+            "body": "JavaScript arrays are sparse.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 72,
+        "fields": {
+            "user": 2,
+            "body": "Python dictionaries maintain insertion order since version 3.7.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 73,
+        "fields": {
+            "user": 3,
+            "body": "Django's runserver command is suitable for production environments.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 74,
+        "fields": {
+            "user": 4,
+            "body": "In SQL, views can always be updated directly.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 75,
+        "fields": {
+            "user": 5,
+            "body": "React Native produces truly native mobile applications.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 76,
+        "fields": {
+            "user": 1,
+            "body": "JavaScript's map method modifies the original array.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 77,
+        "fields": {
+            "user": 2,
+            "body": "In Python, strings are mutable.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 78,
+        "fields": {
+            "user": 3,
+            "body": "Django's admin site is automatically generated based on models.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 79,
+        "fields": {
+            "user": 4,
+            "body": "SQL's DELETE statement always triggers cascading deletes when foreign keys exist.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 80,
+        "fields": {
+            "user": 5,
+            "body": "React's render method can be called multiple times in a component's lifecycle.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 81,
+        "fields": {
+            "user": 1,
+            "body": "JavaScript was initially designed for back-end development.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 82,
+        "fields": {
+            "user": 2,
+            "body": "Python's lambda functions can contain multiple expressions.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 83,
+        "fields": {
+            "user": 3,
+            "body": "Django signals are synchronous by default.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 84,
+        "fields": {
+            "user": 4,
+            "body": "In SQL, NULL values are treated as equal in comparisons.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 85,
+        "fields": {
+            "user": 5,
+            "body": "React's useReducer hook is an alternative to useState.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 86,
+        "fields": {
+            "user": 1,
+            "body": "JavaScript's strict mode makes it easier to write 'secure' JavaScript.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 87,
+        "fields": {
+            "user": 2,
+            "body": "Python's list.sort() method returns a new sorted list.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 88,
+        "fields": {
+            "user": 3,
+            "body": "Django automatically creates database indexes for foreign key fields.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 89,
+        "fields": {
+            "user": 4,
+            "body": "SQL's AUTOINCREMENT feature guarantees sequential values without gaps.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 90,
+        "fields": {
+            "user": 5,
+            "body": "React hooks can be called conditionally.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 91,
+        "fields": {
+            "user": 1,
+            "body": "JavaScript's void operator evaluates an expression and returns undefined.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 92,
+        "fields": {
+            "user": 2,
+            "body": "Python's __init__ method is the same as a constructor in other languages.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 93,
+        "fields": {
+            "user": 3,
+            "body": "Django's startapp command creates a new Django project.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 94,
+        "fields": {
+            "user": 4,
+            "body": "In SQL, constraints can be added to views.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 95,
+        "fields": {
+            "user": 5,
+            "body": "All React components must be defined in JSX.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 96,
+        "fields": {
+            "user": 1,
+            "body": "JavaScript's setTimeout guarantees execution after exactly the specified delay.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 97,
+        "fields": {
+            "user": 2,
+            "body": "Python's pass statement does nothing when executed.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 98,
+        "fields": {
+            "user": 3,
+            "body": "Django's ORM prevents SQL injection attacks.",
+            "answer": true
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 99,
+        "fields": {
+            "user": 4,
+            "body": "In SQL, transactions are only supported by relational databases.",
+            "answer": false
+        }
+    },
+    {
+        "model": "apiapi.question",
+        "pk": 100,
+        "fields": {
+            "user": 5,
+            "body": "React's useEffect can perfectly replicate all class lifecycle methods.",
+            "answer": false
+        }
+    }
+]
