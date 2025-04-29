@@ -4,6 +4,6 @@ from.question import Question
 
 class QuizResponse(models.Model):
     quizattempt = models.ForeignKey(QuizAttempt, on_delete=models.DO_NOTHING, related_name="quiz")
-    question = models.ForeignKey(Question, on_delete=models.DO_NOTHING, related_name="question")
+    question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name="question")
     user_answer = models.BooleanField()
     is_correct = models.BooleanField()

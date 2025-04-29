@@ -11,6 +11,8 @@ router = routers.DefaultRouter(trailing_slash=False)
 router.register(r"users",Users,"user")
 router.register(r"categories",CategoryViewSet, basename="category")
 router.register(r"questions", QuestionViewSet, basename="question")
+router.register(r"quizattempts", QuizAttemptViewSet, basename="quizattempt")
+router.register(r"quizresponses",QuizResponseViewSet, basename="quizresponse")
 
 urlpatterns = [
     path("", include(router.urls)),

@@ -1,27 +1,28 @@
 from django.http import HttpResponseServerError
-from rest_framework import viewsets
+from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
 from apiapi.models import Question
 
 
-class QuestionSerializer(serializers.HyperlinkedModelSerializer):
+class QuestionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Question
         fields = ('id', 'user', 'body','answer')
         depth=1
 
-class QuestionViewSet(viewsets.ModelViewSet):
+class QuestionViewSet(ViewSet):
+
     queryset = Question.objects.all()
-    serializer_class = QuestionSerializer
+   
 
     def list(self, request):
         try:
-            categories = Question.objects.all()
+            questions = Question.objects.all()
             serializer = QuestionSerializer(
-            categories, many=True, context={'request': request})
+            questions, many=True, context={'request': request})
             return Response(serializer.data)
         except Exception as ex:
             return HttpResponseServerError(ex)
@@ -44,8 +45,10 @@ class QuestionViewSet(viewsets.ModelViewSet):
         '''not working'''
         try:
             question = Question.objects.get(pk=pk)
+            if question.user.id!=request.user.id:
+                return Response('You are not the user who wrote this question',status=status.HTTP_403_FORBIDDEN)
             question.delete()
-            return Response(None, status=status.HTTP_204_NO_CONTENT)
+            return Response('Question was deleted successfully.', status=status.HTTP_204_NO_CONTENT)
 
         except Question.DoesNotExist as ex:
             return Response({"message": ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
@@ -64,6 +67,8 @@ class QuestionViewSet(viewsets.ModelViewSet):
         """
         try:
             question = Question.objects.get(pk=pk)
+            if question.user.id!=request.user.id:
+                return Response('You are not the user who wrote this question',status=status.HTTP_403_FORBIDDEN)
             question.user = question.user
             question.body = request.data["body"]
             question.answer = request.data["answer"]
@@ -75,3 +80,21 @@ class QuestionViewSet(viewsets.ModelViewSet):
             return HttpResponseServerError(ex)
 
         return Response(None, status=status.HTTP_204_NO_CONTENT)
+    
+    def create(self, request):
+        """Handle POST operations
+
+        Returns:
+            Response -- JSON serialized instance
+        """
+        question = Question()
+        question.user=request.user
+        question.body=request.data.get('body')
+        question.answer=request.data.get('answer')
+
+        try:
+            question.save()
+            serializer = QuestionSerializer(question, context={'request':request})
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        except Exception as ex:
+            return Response({"reason": ex.args[0]}, status=status.HTTP_400_BAD_REQUEST)

@@ -3,7 +3,7 @@
         "model": "auth.user",
         "pk": 1,
         "fields": {
-            "password": "pbkdf2_sha256$260000$AbCdEfGhIjKlMnOpQrStUv$1234567890abcdefghijklmnopqrstuvwxyz123456",
+            "password": "pbkdf2_sha256$150000$fHDURJBIASpx$trZS1MWc6YiNe5EYNBap+P+zMAwpNgNbUZH/b9bgvdw=",
             "last_login": null,
             "is_superuser": false,
             "username": "edita",
@@ -21,7 +21,7 @@
         "model": "auth.user",
         "pk": 2,
         "fields": {
-            "password": "pbkdf2_sha256$260000$AbCdEfGhIjKlMnOpQrStUv$1234567890abcdefghijklmnopqrstuvwxyz123456",
+            "password": "pbkdf2_sha256$150000$fHDURJBIASpx$trZS1MWc6YiNe5EYNBap+P+zMAwpNgNbUZH/b9bgvdw=",
             "last_login": null,
             "is_superuser": false,
             "username": "nate",
@@ -39,7 +39,7 @@
         "model": "auth.user",
         "pk": 3,
         "fields": {
-            "password": "pbkdf2_sha256$260000$AbCdEfGhIjKlMnOpQrStUv$1234567890abcdefghijklmnopqrstuvwxyz123456",
+            "password": "pbkdf2_sha256$150000$fHDURJBIASpx$trZS1MWc6YiNe5EYNBap+P+zMAwpNgNbUZH/b9bgvdw=",
             "last_login": null,
             "is_superuser": false,
             "username": "john",
@@ -57,7 +57,7 @@
         "model": "auth.user",
         "pk": 4,
         "fields": {
-            "password": "pbkdf2_sha256$260000$AbCdEfGhIjKlMnOpQrStUv$1234567890abcdefghijklmnopqrstuvwxyz123456",
+            "password": "pbkdf2_sha256$150000$fHDURJBIASpx$trZS1MWc6YiNe5EYNBap+P+zMAwpNgNbUZH/b9bgvdw=",
             "last_login": null,
             "is_superuser": false,
             "username": "sabra",
@@ -75,7 +75,7 @@
         "model": "auth.user",
         "pk": 5,
         "fields": {
-            "password": "pbkdf2_sha256$260000$AbCdEfGhIjKlMnOpQrStUv$1234567890abcdefghijklmnopqrstuvwxyz123456",
+            "password": "pbkdf2_sha256$150000$fHDURJBIASpx$trZS1MWc6YiNe5EYNBap+P+zMAwpNgNbUZH/b9bgvdw=",
             "last_login": null,
             "is_superuser": false,
             "username": "joanna",
