@@ -3,15 +3,25 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
-from apiapi.models import Question
+from apiapi.models import Question, Category
 
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = ('id', 'name')
 
 class QuestionSerializer(serializers.ModelSerializer):
+    categories = serializers.SerializerMethodField()
 
     class Meta:
         model = Question
-        fields = ('id', 'user', 'body','answer')
+        fields = ('id', 'user', 'body','answer', 'categories')
         depth=1
+
+    def get_categories(self, obj):
+        from apiapi.models import QuestionCategory
+        question_categories = QuestionCategory.objects.filter(question=obj)
+        return CategorySerializer([qc.category for qc in question_categories], many=True).data
 
 class QuestionViewSet(ViewSet):
 
@@ -20,7 +30,8 @@ class QuestionViewSet(ViewSet):
 
     def list(self, request):
         try:
-            questions = Question.objects.all()
+            user=request.user
+            questions = Question.objects.filter(user=user)
             serializer = QuestionSerializer(
             questions, many=True, context={'request': request})
             return Response(serializer.data)

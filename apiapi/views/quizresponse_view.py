@@ -5,13 +5,14 @@ from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
 from apiapi.models import QuizAttempt, QuizResponse, Question
+from rest_framework.exceptions import NotFound
 
 
 class QuizResponseSerializer(serializers.ModelSerializer):
 
     class Meta:
         model=QuizResponse
-        fields=('id', 'quizattempt','question','user_answer','is_correct')
+        fields='__all__'
         depth=1
 
 
@@ -19,25 +20,24 @@ class QuizResponseViewSet(ViewSet):
 
     def list(self, request):
         try:
-            quizresponses=QuizResponse.objects.all()
-            serializer=QuizResponseSerializer(
+            # Check if quizattempt_id is provided in query params
+            quizattempt_id = request.query_params.get('quizattempt_id')
+            
+            if quizattempt_id:
+                # Filter responses by quizattempt_id
+                quizresponses = QuizResponse.objects.filter(quizattempt_id=quizattempt_id)
+                if not quizresponses:
+                    return Response({"message": f"No quiz responses found for quizattempt_id={quizattempt_id}"}, 
+                                    status=status.HTTP_404_NOT_FOUND)
+            else:
+                # If no quizattempt_id is provided, return all responses
+                quizresponses = QuizResponse.objects.all()
+                
+            serializer = QuizResponseSerializer(
                 quizresponses, many=True, context={'request': request})
             return Response(serializer.data)
         except Exception as ex:
             return HttpResponseServerError(ex)
-
-    def retrieve(self, request, pk=None):
-        """Handle GET requests for single item
-
-        Returns:
-            Response -- JSON serialized instance
-        """
-        try:
-            quizresponse = QuizResponse.objects.get(pk=pk)
-            serializer = QuizResponseSerializer(quizresponse, context={'request': request})
-            return Response(serializer.data)
-        except Exception as ex:
-            return Response({"reason": ex.args[0]}, status=status.HTTP_400_BAD_REQUEST)
         
     def create(self, request):
         """Handle POST operations
@@ -72,3 +72,4 @@ class QuizResponseViewSet(ViewSet):
             return Response({"reason": "QuizAttempt not found"}, status=status.HTTP_404_NOT_FOUND)
         except Exception as ex:
             return Response({"reason": str(ex)}, status=status.HTTP_400_BAD_REQUEST)
+        

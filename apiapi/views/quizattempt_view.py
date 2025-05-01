@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
 from apiapi.models import QuizAttempt, Category
+from rest_framework.permissions import IsAuthenticated
 
 
 class QuizAttemptSerializer(serializers.ModelSerializer):
@@ -15,12 +16,14 @@ class QuizAttemptSerializer(serializers.ModelSerializer):
 
 
 class QuizAttemptViewSet(ViewSet):
+    permission_classes = [IsAuthenticated]
 
     def list(self, request):
         try:
-            quizattempts=QuizAttempt.objects.all()
+            user=request.user
+            myquizattempts=QuizAttempt.objects.filter(user=user)
             serializer=QuizAttemptSerializer(
-                quizattempts, many=True, context={'request': request})
+                myquizattempts, many=True, context={'request': request})
             return Response(serializer.data)
         except Exception as ex:
             return HttpResponseServerError(ex)
