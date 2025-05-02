@@ -14,6 +14,26 @@ class QuestionCategorySerializer(serializers.ModelSerializer):
         
 
 class QuestionCategoryViewSet(ViewSet):
+
+    def list(self, request):
+        try:
+            question_id = request.query_params.get('question_id')
+            
+            if question_id:
+                # Filter responses by question_id
+                questioncategories = QuestionCategory.objects.filter(question_id=question_id)
+                if not questioncategories:
+                    return Response({"message": f"No categories found for question_id={question_id}"}, 
+                                    status=status.HTTP_404_NOT_FOUND)
+            else:
+                # If no question_id is provided, return all responses
+                 questioncategories = QuestionCategory.objects.all()
+                
+            serializer = QuestionCategorySerializer(
+                questioncategories, many=True, context={'request': request})
+            return Response(serializer.data)
+        except Exception as ex:
+            return HttpResponseServerError(ex)
     
     def create(self, request):
         """Handle POST operations to create a question-category relationship
