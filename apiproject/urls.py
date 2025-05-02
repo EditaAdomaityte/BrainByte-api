@@ -13,6 +13,7 @@ router.register(r"categories",CategoryViewSet, basename="category")
 router.register(r"questions", QuestionViewSet, basename="question")
 router.register(r"quizattempts", QuizAttemptViewSet, basename="quizattempt")
 router.register(r"quizresponses",QuizResponseViewSet, basename="quizresponse")
+router.register(r"questioncategories", QuestionCategoryViewSet, basename="questioncategory")
 
 urlpatterns = [
     path("", include(router.urls)),
