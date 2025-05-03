@@ -48,6 +48,10 @@ CORS_ORIGIN_WHITELIST = (
     'http://127.0.0.1:5173',
 )
 
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:5173",  # Vite/React default dev server
+]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
