@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
 from apiapi.models import Question, Category, QuestionCategory
+from rest_framework.permissions import IsAuthenticated
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
@@ -24,6 +25,7 @@ class QuestionSerializer(serializers.ModelSerializer):
         return CategorySerializer([qc.category for qc in question_categories], many=True).data
 
 class QuestionViewSet(ViewSet):
+    from rest_framework.permissions import IsAuthenticated
 
     queryset = Question.objects.all()
 

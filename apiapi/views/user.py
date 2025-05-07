@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
 from django.contrib.auth.models import User
+from rest_framework.permissions import IsAuthenticated, IsAdminUser
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -26,6 +27,10 @@ class Users(ViewSet):
     Purpose: Allow a user to communicate with the BrainByte database to GET PUT POST and DELETE Users.
     Methods: GET PUT(id) POST
 """
+    def get_permissions(self):
+        if self.action == 'partial_update':
+            return [IsAdminUser()]
+        return [IsAuthenticated()]
 
 
     def retrieve(self, request, pk=None):
@@ -43,13 +48,13 @@ class Users(ViewSet):
             return HttpResponseServerError(ex)
 
 
-
     def list(self, request):
         """Handle GET requests to user resource"""
         users = User.objects.all()
         serializer = UserSerializer(
             users, many=True, context={'request': request})
         return Response(serializer.data)
+    
 
     def partial_update(self, request, pk=None):
         if not request.user.is_staff:
