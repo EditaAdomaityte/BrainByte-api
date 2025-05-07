@@ -50,3 +50,16 @@ class Users(ViewSet):
         serializer = UserSerializer(
             users, many=True, context={'request': request})
         return Response(serializer.data)
+
+    def partial_update(self, request, pk=None):
+        if not request.user.is_staff:
+            return Response({"detail": "You do not have permission to edit users."},
+                            status=status.HTTP_403_FORBIDDEN)
+        try:
+            user = User.objects.get(pk=pk)
+            for attr, value in request.data.items():
+                setattr(user, attr, value)
+            user.save()
+            return Response({"message": "User updated."})
+        except User.DoesNotExist:
+            return Response({"error": "User not found"}, status=404)

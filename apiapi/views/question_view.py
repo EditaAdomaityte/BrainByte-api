@@ -3,7 +3,7 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
-from apiapi.models import Question, Category
+from apiapi.models import Question, Category, QuestionCategory
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
@@ -15,7 +15,7 @@ class QuestionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Question
-        fields = ('id', 'user', 'body','answer', 'categories')
+        fields = ('id', 'user', 'body','answer','approved', 'categories')
         depth=1
 
     def get_categories(self, obj):
@@ -26,15 +26,39 @@ class QuestionSerializer(serializers.ModelSerializer):
 class QuestionViewSet(ViewSet):
 
     queryset = Question.objects.all()
-   
 
     def list(self, request):
         try:
-            user=request.user
-            questions = Question.objects.filter(user=user)
-            serializer = QuestionSerializer(
-            questions, many=True, context={'request': request})
+            category_id = request.query_params.get('category_id')
+            user_only = request.query_params.get('mine') == 'true'
+            is_staff = request.user.is_staff
+
+            if category_id:
+                # Filter by category AND approval
+                question_ids = QuestionCategory.objects.filter(
+                    category_id=category_id
+                ).values_list('question_id', flat=True).distinct()
+
+                questions = Question.objects.filter(id__in=question_ids, approved=True)
+
+            elif user_only:
+                # Only get current user's questions
+                questions = Question.objects.filter(user=request.user)
+
+            elif is_staff:
+                # Admin sees all questions
+                questions = Question.objects.all()
+
+            else:
+                # Non-staff user sees only their own questions by default
+                questions = Question.objects.filter(user=request.user)
+
+            if not questions.exists():
+                return Response({"message": "No questions found."}, status=status.HTTP_404_NOT_FOUND)
+
+            serializer = QuestionSerializer(questions, many=True, context={'request': request})
             return Response(serializer.data)
+
         except Exception as ex:
             return HttpResponseServerError(ex)
 
@@ -109,3 +133,14 @@ class QuestionViewSet(ViewSet):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         except Exception as ex:
             return Response({"reason": ex.args[0]}, status=status.HTTP_400_BAD_REQUEST)
+        
+    def partial_update(self, request, pk=None):
+        try: 
+            question=Question.objects.get(pk=pk)
+            for attr, value in request.data.items():
+                setattr(question, attr, value)
+            
+            question.save()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        except Question.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
