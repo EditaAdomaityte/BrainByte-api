@@ -36,19 +36,24 @@ In your terminal run:
 git clone git@github.com:EditaAdomaityte/BrainByte-api.git
 cd BrainByte-api
 ```
+### 3.Install dependencies
+In your terminal run:
+```sh
+pipenv install
+```
 
-### 3. Set up a virtual environment
+### 4. Set up a virtual environment
 In your terminal run:
 ```sh
 pipenv shell
 ```
 
-### 4. Apply migrations
+### 5. Apply migrations
 In your terminal run:
 ```sh
 ./seed_database.sh
 ```
-### 5. Run the debugger in VSCode.
+### 6. Run the debugger in VSCode.
  Once running, API is available at: http://localhost:8000
 
 ## Contributing
