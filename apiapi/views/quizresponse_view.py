@@ -6,6 +6,7 @@ from rest_framework import serializers
 from rest_framework import status
 from apiapi.models import QuizAttempt, QuizResponse, Question
 from rest_framework.exceptions import NotFound
+from rest_framework.permissions import IsAuthenticated
 
 
 class QuizResponseSerializer(serializers.ModelSerializer):
@@ -17,6 +18,7 @@ class QuizResponseSerializer(serializers.ModelSerializer):
 
 
 class QuizResponseViewSet(ViewSet):
+    permission_classes = [IsAuthenticated]
 
     def list(self, request):
         try:

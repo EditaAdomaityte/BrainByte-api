@@ -25,7 +25,7 @@ class QuestionSerializer(serializers.ModelSerializer):
         return CategorySerializer([qc.category for qc in question_categories], many=True).data
 
 class QuestionViewSet(ViewSet):
-    from rest_framework.permissions import IsAuthenticated
+    permission_classes = [IsAuthenticated]
 
     queryset = Question.objects.all()
 

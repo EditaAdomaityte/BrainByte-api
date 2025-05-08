@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
 from apiapi.models import Category
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from rest_framework.permissions import IsAuthenticated
 from django.contrib.auth.models import User
 
 class CategorySerializer(serializers.HyperlinkedModelSerializer):
@@ -15,6 +15,8 @@ class CategorySerializer(serializers.HyperlinkedModelSerializer):
         depth=1
 
 class CategoryViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticated]
+
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
 

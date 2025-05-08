@@ -5,6 +5,7 @@ from rest_framework import serializers
 from rest_framework import status
 from apiapi.models import QuestionCategory, Question, Category
 from rest_framework.decorators import action
+from rest_framework.permissions import IsAuthenticated
 
 
 class QuestionCategorySerializer(serializers.ModelSerializer):
@@ -15,6 +16,7 @@ class QuestionCategorySerializer(serializers.ModelSerializer):
         
 
 class QuestionCategoryViewSet(ViewSet):
+    permission_classes = [IsAuthenticated]
 
     def list(self, request):
         try:
