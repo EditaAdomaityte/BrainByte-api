@@ -1,0 +1,37 @@
+[
+    {
+        "model": "apiapi.category",
+        "pk": 1,
+        "fields": {
+            "name": "JavaScript"
+        }
+    },
+    {
+        "model": "apiapi.category",
+        "pk": 2,
+        "fields": {
+            "name": "Python"
+        }
+    },
+    {
+        "model": "apiapi.category",
+        "pk": 3,
+        "fields": {
+            "name": "Django"
+        }
+    },
+    {
+        "model": "apiapi.category",
+        "pk": 4,
+        "fields": {
+            "name": "SQL"
+        }
+    },
+    {
+        "model": "apiapi.category",
+        "pk": 5,
+        "fields": {
+            "name": "React"
+        }
+    }
+]
